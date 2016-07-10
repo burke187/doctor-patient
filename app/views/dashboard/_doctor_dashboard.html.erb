@@ -16,7 +16,7 @@
   <tr>
     <% @doctor.patients.each do |p| %>
       <td>
-        <%= p.name %>
+        <%= link_to p.name, "patients/#{p.id}" %>
       </td>
       <td>
         <%= p.age %>
