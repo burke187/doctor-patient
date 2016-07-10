@@ -12,6 +12,9 @@
     <td>
       Address
     </td>
+    <td>
+      Attachments
+    </td>
   </tr>
   <tr>
     <% @doctor.patients.each do |p| %>
@@ -23,6 +26,9 @@
       </td>
       <td>
         <%= p.address %>
+      </td>
+      <td>
+        <%= p.file %>
       </td>
     <% end %>
   </tr>

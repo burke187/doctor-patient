@@ -22,7 +22,9 @@
 
 <p>
   <stong>Attachments:</stong>
-  <%= image_tag @patient.file.url(:thumb) %>
+  <% if !!@patient.file %>
+    <%= image_tag @patient.file.url(:thumb) %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_patient_path(@patient) %> |

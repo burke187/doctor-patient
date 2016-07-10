@@ -1,10 +1,11 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
+  respond_to :json
 
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
+    respond_with Patient.all
   end
 
   # GET /patients/1
@@ -14,7 +15,7 @@ class PatientsController < ApplicationController
 
   # GET /patients/new
   def new
-    @patient = Patient.new
+    respond_with Patient.new
   end
 
   # GET /patients/1/edit
@@ -24,7 +25,7 @@ class PatientsController < ApplicationController
   # POST /patients
   # POST /patients.json
   def create
-    @patient = Patient.new(patient_params)
+    respond_with Patient.new(patient_params)
 
     respond_to do |format|
       if @patient.save
