@@ -1,0 +1,29 @@
+<h1> Welcome Dr. <%= @doctor.name %>! </h1> 
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<h3> Current Patients: </h3>
+<table>
+  <tr>
+    <td>
+      Patient Name
+    </td>
+    <td>
+      Age
+    </td>
+    <td>
+      Address
+    </td>
+  </tr>
+  <tr>
+    <% @doctor.patients.each do |p| %>
+      <td>
+        <%= p.name %>
+      </td>
+      <td>
+        <%= p.age %>
+      </td>
+      <td>
+        <%= p.address %>
+      </td>
+    <% end %>
+  </tr>
+</table>
