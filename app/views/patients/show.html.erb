@@ -17,7 +17,12 @@
 
 <p>
   <strong>Doctor:</strong>
-  <%= @patient.doctor_id %>
+  <%= @patient.doctor.name %>
+</p>
+
+<p>
+  <stong>Attachments:</stong>
+  <%= image_tag @patient.file.url(:thumb) %>
 </p>
 
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
