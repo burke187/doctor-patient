@@ -1,35 +1,32 @@
 <h1> Welcome <%= @patient.name %>! </h1>
 
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @patient.name %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @patient.age %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @patient.address %>
-</p>
-
-<p>
-  <strong>Doctor:</strong>
-  <%= @patient.doctor.name %>
-</p>
-
-<p>
-  <stong>Attachments:</stong>
-  <%= image_tag @patient.file.url(:thumb) %>
-</p>
-
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
-
+<div class="tbl-header">
+  <table cellpadding="0" cellspacing="0" border="0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Attachments</th>
+      </tr>
+    </thead>
+  </table>
+</div>
+<div class="tbl-content">
+  <table cellpadding="0" cellspacing="0" border="0">
+    <tbody>
+      <tr>
+        <td><%= @patient.name %></td>
+        <td><%= @patient.age %></td>
+        <td><%= @patient.address %></td>
+        <% if !!@patient.file %>
+          <td><%= image_tag @patient.file.url(:thumb) %></td>
+        <% end %>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 <h3> Upload documents </h3>
 
