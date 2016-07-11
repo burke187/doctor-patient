@@ -1,1 +1,12 @@
-<h1> Welcome! </h1>
+
+<div class="login-page">
+  <div class="form">
+    <form class="login-form">
+      <%= form_for new_user_session_path do |f| %>
+  <%= f.email_field :email , placeholder: "Email"%>
+  <%= f.password_field :password, placeholder: "Password" %>
+
+  <div><%= f.submit "Sign in" %></div>
+<% end %>
+  </div>
+</div>

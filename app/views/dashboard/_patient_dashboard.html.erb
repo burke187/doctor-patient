@@ -33,7 +33,7 @@
 
 <h3> Upload documents </h3>
 
-<%= form_for @patient, html: { multipar: true } do |f| %>
+<%= form_for @patient, html: { multipart: true } do |f| %>
   <div class="field">
     <%= f.label :file %>
     <%= f.file_field :file %>
